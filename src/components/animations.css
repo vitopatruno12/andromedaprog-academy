@@ -1,0 +1,249 @@
+.text-gradient {
+  background: linear-gradient(90deg, #ff7a18, #af002d 60%, #319197);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CARD ANIMATA */
+.course-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 14px;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* FADE-IN */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* FADE + SLIDE */
+.fade-slide-down {
+  animation: fadeSlideDown 0.9s ease forwards;
+}
+
+@keyframes fadeSlideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-slide-right {
+  animation: fadeSlideRight 1s ease forwards;
+}
+@keyframes fadeSlideRight {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.fade-slide-left {
+  animation: fadeSlideLeft 1s ease forwards;
+}
+@keyframes fadeSlideLeft {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 1s ease forwards;
+}
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Effetto card hover */
+.hover-up {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-up:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Pulsante WhatsApp animato */
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Immagine galleggiante */
+.floating-image {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.review-card {
+  border-radius: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+}
+.scroll-title-container {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #003d99;
+  border-bottom: 2px solid #003d99;
+  padding: 12px 0;
+  margin-bottom: 30px;
+}
+
+.scroll-title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #003d99;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+.banner-title {
+  font-size: 32px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(0, 242, 254, 0.35);
+  animation: titleSlideUp 1.3s ease forwards;
+  letter-spacing: 0.5px;
+
+
+}
+
+
+
+/* Animazione in entrata */
+@keyframes titleSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-fade {
+  animation: faqFade 0.4s ease-in-out;
+}
+
+@keyframes faqFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FAQ */
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.faq-icon {
+  font-size: 26px;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(45deg);
+}
+
+/* Fade in */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* BRAND NEON */
+.neon-brand {
+  color: #080409e3 !important;
+  text-shadow:
+    0 0 5px #defe4f,
+    0 0 15px #b2fe4f,
+    0 0 30px #1efe00;
+}
+
+/* LINK NORMALI */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* LINK ATTIVO NEON */
+.neon-active {
+  color: #11fe00 !important;
+  text-shadow:
+    0 0 6px #00fe3f,
+    0 0 15px #00f2fe,
+    0 0 30px #4ffe89;
+}
+
+/* LINEA NEON SOTTO */
+.neon-active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4ffe89, #00f2fe);
+  box-shadow:
+    0 0 8px #00f2fe,
+    0 0 16px #4facfe;
+  animation: neonSlide 1.5s infinite alternate;
+}
+
+/* ANIMAZIONE */
+@keyframes neonSlide {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
