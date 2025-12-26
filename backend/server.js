@@ -1,31 +1,37 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import SibApiV3Sdk from "sib-api-v3-sdk";
+import SibApiV3Sdk from "sib_api_v3_sdk";
 
 dotenv.config();
 
 const app = express();
+
+/* =======================
+   MIDDLEWARE
+======================= */
 app.set("trust proxy", 1);
 
 app.use(cors({
   origin: "https://magenta-madeleine-9ebd1a.netlify.app",
-  methods: ["POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
 }));
 
 app.use(express.json());
 
 /* =======================
-   BREVO API CONFIG
+   BREVO API SETUP
 ======================= */
 const client = SibApiV3Sdk.ApiClient.instance;
 client.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
 
-const emailApi = new SibApiV3Sdk.TransactionalEmailsApi();
+const transactionalApi = new SibApiV3Sdk.TransactionalEmailsApi();
+
+console.log("✅ Brevo API inizializzata");
 
 /* =======================
-   SEND EMAIL
+   ROUTE SEND EMAIL
 ======================= */
 app.post("/send-email", async (req, res) => {
   console.log("📩 POST /send-email ricevuta");
@@ -33,28 +39,44 @@ app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ success: false });
+    return res.status(400).json({
+      success: false,
+      error: "Dati mancanti"
+    });
   }
 
   try {
-    await emailApi.sendTransacEmail({
-      sender: { email: "vpatruno528@gmail.com", name: "AndromedaProg Academy" },
-      to: [{ email: "vpatruno528@gmail.com" }],
-      replyTo: { email },
+    await transactionalApi.sendTransacEmail({
+      sender: {
+        email: "noreply@andromedaprog.academy",
+        name: "AndromedaProg Academy"
+      },
+      to: [
+        {
+          email: "vpatruno528@gmail.com",
+          name: "Admin"
+        }
+      ],
+      replyTo: {
+        email,
+        name
+      },
       subject: `Nuovo messaggio da ${name}`,
-      textContent: `
-Nome: ${name}
-Email: ${email}
-
-Messaggio:
-${message}
-      `,
+      htmlContent: `
+        <h3>Nuovo messaggio dal sito</h3>
+        <p><b>Nome:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Messaggio:</b></p>
+        <p>${message}</p>
+      `
     });
 
-    console.log("✅ Email inviata via Brevo API");
+    console.log("✅ Email inviata con Brevo API");
+
     res.json({ success: true });
-  } catch (err) {
-    console.error("❌ Brevo API error:", err);
+
+  } catch (error) {
+    console.error("❌ Errore Brevo:", error);
     res.status(500).json({ success: false });
   }
 });
@@ -63,6 +85,7 @@ ${message}
    START SERVER
 ======================= */
 const PORT = process.env.PORT;
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Backend avviato sulla porta ${PORT}`);
 });
