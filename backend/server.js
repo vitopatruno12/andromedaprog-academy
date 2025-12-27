@@ -6,7 +6,7 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: "https://magenta-madeleine-9ebd1a.netlify.app",
+  origin:  "https://teal-froyo-e3ae79.netlify.app",
   methods: ["POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
@@ -32,17 +32,18 @@ app.post("/send-email", async (req, res) => {
       body: JSON.stringify({
         sender: {
           name: "AndromedaProg Academy",
-          email: process.env.BREVO_SENDER_EMAIL,
+          email: process.env.BREVO_SENDER_EMAIL, // email verificata Brevo
         },
         to: [
           {
-            email: process.env.BREVO_SENDER_EMAIL,
-            name: "Admin",
+            email: "info@andromedaprog.it",
+
+            name: "AndromedaProg Academy"
           },
         ],
         replyTo: {
-          email,
-          name,
+          email :"info@andromedaprog.it",
+          name :"Andromedaprog-Academy",
         },
         subject: `Nuovo messaggio da ${name}`,
         htmlContent: `
