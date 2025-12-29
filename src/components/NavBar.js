@@ -7,7 +7,7 @@ export default function Navbar({ darkMode, toggleDark }) {
   const location = useLocation();
 
   const isActive = (path) =>
-    location.pathname === path;
+    location.pathname === path ? "nav-link active" : "nav-link";
 
   return (
     <nav
@@ -34,23 +34,35 @@ export default function Navbar({ darkMode, toggleDark }) {
         {/* MENU */}
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
-            <li className="nav-item fw-bold ">
+
+            <li className="nav-item fw-bold">
               <Link to="/" className={isActive("/")}>
                 Home
               </Link>
             </li>
 
-            <li className="nav-item fw-bold ">
+            <li className="nav-item fw-bold">
               <Link to="/corsi" className={isActive("/corsi")}>
                 Corsi
               </Link>
             </li>
 
-            <li className="nav-item fw-bold ">
-              <Link to="/faq" className={isActive("/faq")}>
-                FAQ
-              </Link>
+           <li className="nav-item fw-bold">
+  <Link to="/#faq" className="nav-link">
+    FAQ
+  </Link>
+</li>
+
+            {/* ✅ TORNA AL SITO PRINCIPALE */}
+            <li className="nav-item fw-bold">
+              <a
+                href="https://www.andromedaprog.it"
+                className="nav-link"
+              >
+                Sito principale
+              </a>
             </li>
+
           </ul>
 
           {/* DARK MODE */}

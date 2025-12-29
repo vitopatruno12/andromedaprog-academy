@@ -1,15 +1,21 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+export default function ScrollToTop() {
+  const { pathname, hash } = useLocation();
 
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [pathname]);
-
+  useEffect(() => {
+    if (hash) {
+      // scrolla alla sezione (FAQ)
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // normale cambio pagina
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [pathname, hash]);
 
   return null;
 }
-
-export default ScrollToTop;

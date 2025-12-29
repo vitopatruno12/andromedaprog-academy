@@ -9,6 +9,7 @@ import WhatsAppSection from "./components/WhatsAppSection";
 import ContactEmail from "./components/ContactEmail";
 import LandingPage from "./components/LandingPage";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToHash from "./components/scrollToHash";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,19 +18,27 @@ function App() {
 
   return (
     <Router>
+      {/* 🔝 Scrolla in alto al cambio pagina */}
+      <ScrollToTop />
 
-        <ScrollToTop /> 
-      <div className={darkMode ? "bg-dark text-light min-vh-100" : "bg-white text-dark min-vh-100"}>
-        
-        {/* NAVBAR SEMPRE PRESENTE */}
+      {/* 🎯 Scroll automatico agli anchor (#faq) */}
+      <ScrollToHash />
+
+      <div
+        className={
+          darkMode
+            ? "bg-dark text-light min-vh-100"
+            : "bg-white text-dark min-vh-100"
+        }
+      >
+        {/* NAVBAR */}
         <Navbar darkMode={darkMode} toggleDark={toggleDark} />
 
-        {/* ROUTER PRINCIPALE */}
+        {/* ROUTES */}
         <Routes>
-
-          {/* === HOME / LANDING PAGE === */}
-          <Route 
-            path="/" 
+          {/* === HOME === */}
+          <Route
+            path="/"
             element={
               <>
                 <LandingPage darkMode={darkMode} />
@@ -37,12 +46,12 @@ function App() {
                 <WhatsAppSection darkMode={darkMode} />
                 <ContactEmail darkMode={darkMode} />
               </>
-            } 
+            }
           />
 
-          {/* === PAGINA CORSI (senza scroll landing) === */}
-          <Route 
-            path="/corsi" 
+          {/* === CORSI === */}
+          <Route
+            path="/corsi"
             element={
               <>
                 <CoursesCatalog darkMode={darkMode} />
@@ -50,12 +59,11 @@ function App() {
                 <WhatsAppSection darkMode={darkMode} />
                 <ContactEmail darkMode={darkMode} />
               </>
-            } 
+            }
           />
-
         </Routes>
 
-        {/* FOOTER SEMPRE PRESENTE */}
+        {/* FOOTER */}
         <Footer darkMode={darkMode} />
       </div>
     </Router>

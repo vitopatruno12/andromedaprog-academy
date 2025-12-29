@@ -121,72 +121,146 @@ export default function LandingPage({ darkMode }) {
         <h2 className="fw-bold text-center mb-5">Dicono di noi</h2>
 
         <div className="row g-4">
-          <div className="col-md-4">
-            <div className="card p-4 shadow-sm review-card h-100">
-              <div className="d-flex align-items-center mb-3">
-                <img
-                  src="https://i.pravatar.cc/80?img=12"
-                  className="rounded-circle me-3"
-                  width="60"
-                  height="60"
-                  alt="Foto studente Marco"
-                />
-                <div>
-                  <h5 className="fw-bold mb-0">Marco L.</h5>
-                  <small className="text-muted">Corso: Web Development</small>
-                </div>
-              </div>
-              <div className="mb-2">⭐⭐⭐⭐⭐</div>
-              <p>
-                “Non sapevo nulla di programmazione. In 6 settimane ho costruito il mio primo sito.”
-              </p>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card p-4 shadow-sm review-card h-100">
-              <div className="d-flex align-items-center mb-3">
-                <img
-                  src="https://i.pravatar.cc/80?img=32"
-                  className="rounded-circle me-3"
-                  width="60"
-                  height="60"
-                  alt="Foto studentessa Sara"
-                />
-                <div>
-                  <h5 className="fw-bold mb-0">Sara P.</h5>
-                  <small className="text-muted">Corso: React Developer</small>
-                </div>
-              </div>
-              <div className="mb-2">⭐⭐⭐⭐⭐</div>
-              <p>
-                “Le lezioni sono chiare e pratiche. Ora creo app da sola!”
-              </p>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card p-4 shadow-sm review-card h-100">
-              <div className="d-flex align-items-center mb-3">
-                <img
-                  src="https://i.pravatar.cc/80?img=45"
-                  className="rounded-circle me-3"
-                  width="60"
-                  height="60"
-                  alt="Foto studente Davide"
-                />
-                <div>
-                  <h5 className="fw-bold mb-0">Davide R.</h5>
-                  <small className="text-muted">Corso: Programmazione da Zero</small>
-                </div>
-              </div>
-              <div className="mb-2">⭐⭐⭐⭐⭐</div>
-              <p>
-                “Partivo da zero. Ora ho finalmente capito la programmazione.”
-              </p>
-            </div>
-          </div>
+  {/* RECENSIONE 1 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=12"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studente Marco"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Marco L.</h5>
+          <small className="text-muted">Corso: Web Development</small>
         </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Non sapevo nulla di programmazione. In 6 settimane ho costruito il mio primo sito.”
+      </p>
+    </div>
+  </div>
+
+  {/* RECENSIONE 2 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=32"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studentessa Sara"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Sara P.</h5>
+          <small className="text-muted">Corso: React Developer</small>
+        </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Le lezioni sono chiare e pratiche. Ora creo app da sola!”
+      </p>
+    </div>
+  </div>
+
+  {/* RECENSIONE 3 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=45"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studente Davide"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Davide R.</h5>
+          <small className="text-muted">Corso: Programmazione da Zero</small>
+        </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Partivo da zero. Ora ho finalmente capito la programmazione.”
+      </p>
+    </div>
+  </div>
+
+  {/* RECENSIONE 4 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=8"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studente Luca"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Luca M.</h5>
+          <small className="text-muted">Corso: JavaScript Avanzato</small>
+        </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Metodo chiaro e diretto. Finalmente JavaScript ha senso!”
+      </p>
+    </div>
+  </div>
+
+  {/* RECENSIONE 5 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=19"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studentessa Giulia"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Giulia T.</h5>
+          <small className="text-muted">Corso: Frontend Starter</small>
+        </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Perfetto per chi parte da zero. Tutor sempre disponibili.”
+      </p>
+    </div>
+  </div>
+
+  {/* RECENSIONE 6 */}
+  <div className="col-md-4">
+    <div className="card p-4 shadow-sm review-card h-100">
+      <div className="d-flex align-items-center mb-3">
+        <img
+          src="https://i.pravatar.cc/80?img=52"
+          className="rounded-circle me-3"
+          width="60"
+          height="60"
+          alt="Foto studente Andrea"
+        />
+        <div>
+          <h5 className="fw-bold mb-0">Andrea S.</h5>
+          <small className="text-muted">Corso: React & API</small>
+        </div>
+      </div>
+      <div className="mb-2">⭐⭐⭐⭐⭐</div>
+      <p>
+        “Ho creato il mio primo progetto completo frontend + backend.”
+      </p>
+    </div>
+  </div>
+</div>
+
+       
       </section>
     </div>
   );
