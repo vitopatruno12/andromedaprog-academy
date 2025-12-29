@@ -6,7 +6,7 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin:  "https://teal-froyo-e3ae79.netlify.app",
+  origin:  "https://serene-meerkat-3872f9.netlify.app",
   methods: ["POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
