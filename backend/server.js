@@ -6,7 +6,11 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin:  "https://capable-bonbon-b3d8e1.netlify.app",
+  origin: [
+    "https://www.andromedaprog.it",
+    "https://andromedaprog.it",
+    "https://gorgeous-klepon-89f01b.netlify.app" // Mantenuto per compatibilità
+  ],
   methods: ["POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
